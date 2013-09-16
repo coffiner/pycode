@@ -1,0 +1,80 @@
+<div class="row-fluid dot-line " style="padding:10px;">
+    <div class="span2">
+        <div>
+            <img src="/static/{{userid.headimg}}/" style="width:80px; height:80px;" alt="pic">
+        </div>
+    </div>
+    <div class="span10">
+        <div><h4>{{user.username}}</h4></div>
+        <div style=" margin:10px 0px;">注册时间 {{user.create_time|date:"Y-m-d"}}</div>
+  
+        <div style="color:gray; margin-top:5px;"> 
+            <div class="span4"><a href="/topic/{{user.id}}/">
+                    <h4>主题</h4>
+                </a></div>
+            <div class="span4"><a href="/newPasswd/{{user.id}}/">
+                    <h4>新密码</h4>
+                </a></div>
+            <div class="span4"><a href="">
+                    <h4></h4>
+                </a></div>
+        </div>        
+    </div>
+</div>
+
+{% if isTopic%}
+ {% for post in self_list%}
+    <div class="row-fluid dot-line " style="padding:10px;">
+        <div class="span2">
+            <div>
+                <img src="" style="width:80px; height:80px;" alt="pic">
+            </div>
+        </div>
+        <div class="span10">
+            <div><h4><a href="/post/{{post.id}}/">{{post.title}}</a></h4></div>
+            <div style=" margin:10px 0px;">{{post.content}}</div>
+            <!-- <div>
+                <img src="" alt="1" style="width:100px; height:100px;">
+                <img src="" alt="2" style="width:100px; height:100px;">
+               
+            </div> -->
+            <div style="color:gray; margin-top:5px;"><i class="icon-hand-up">   </i>&nbsp;{{post.count}}
+                <i class="icon-tag"></i>&nbsp;{{post.category}}
+                <i class="icon-time"></i>&nbsp;{{post.create_time|date:"Y-m-d h:i:s"}}
+            </div>        
+        </div>
+    </div>
+{% endfor%}
+{% endif %}
+
+{% if newPasswd%}
+<div class="row-fluid  " style="padding:10px;">
+ 
+    <div class="span12">
+        <form class="form-horizontal" method="post">
+                                
+        <div class="control-group">
+             <label class="control-label " for="inputEmail">邮箱</label>
+            <div class="controls">
+                <span id="inputEmail" type="text" name="email" class="uneditable-input"/>
+                {{user.email}}</span>
+            </div>
+        </div>
+
+          <div class="control-group">
+             <label class="control-label" for="newPassword">new密码</label>
+            <div class="controls">
+                <input id="newPassword" type="password" name="npasswd"/>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">修改</button>
+            </div>
+        </div>
+    </form>
+               
+    </div>
+</div>
+{% endif %}

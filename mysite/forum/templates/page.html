@@ -1,0 +1,21 @@
+
+{% if contacts.has_previous %}
+        <a href="?page={{ contacts.previous_page_number }}">&lt;&lt;</a>&nbsp; 
+{%else%}
+	&lt;&lt;&nbsp; 
+{% endif %}
+
+{%for contact in contacts.paginator.page_range%}  
+    {% if contact == contacts.number%}       
+     {{contact}} &nbsp;                                                  
+{%else%}
+     <a href="?page={{contact}}">{{contact}}</a> &nbsp;       
+{%endif%}
+{% endfor%}
+
+
+{% if contacts.has_next %}
+    <a href="?page={{ contacts.next_page_number }}">&gt;&gt;</a>&nbsp; 
+    {%else%}
+    &gt;&gt;&nbsp; 
+{% endif %}
