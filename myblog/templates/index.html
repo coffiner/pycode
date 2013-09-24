@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title%}danpy5's 博客{% endblock%}
+{% block content %}
+	{% load markup %}
+	{% if contacts%}
+	{% for post in contacts%}
+		<div class="post-wrap">
+			<div class="post">
+				<h2><a href="/article/{{post.slug}}/">{{post.title}}</a></h2>
+				<div class="info">
+					<span>{{post.create_time|date:"m月 d, Y"}}</span>
+					<span>分类 : </span>
+					<span><a href="/category/{{post.category.slug}}/">{{post.category}}</a></span>
+				</div>
+				{{post.contents_html|markdown:'codehilite'}}
+			</div>
+		</div>
+	{% endfor %}
+	{% include "page.html"%}
+	{% endif %}
+
+{% endblock%}

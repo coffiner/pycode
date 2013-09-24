@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title%} 归档{% endblock%}
+{% block content %}
+	<div class="post-wrap">
+		<div class="post">
+			<table>
+				<tbody>
+					{% for post in post_list%}
+					<tr>
+						<td>{{post.create_time|date:"m-d Y"}}</td>
+						<td><a href="/article/{{post.slug}}/">{{post.title}}</a></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

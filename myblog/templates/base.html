@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{%block title%}mysite{% endblock%}</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="/static/css/base.css" >
+	<link rel="stylesheet" type="text/css" href="/static/css/default.css" >
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/jquery-1.10.1.min.js"></script>
+	<script src="/static/js/style.js"></script>
+	<!--多说js加载开始，一个页面只需要加载一次 -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"danpy5"};
+	(function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = 'http://static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!--多说js加载结束，一个页面只需要加载一次 -->
+</head>
+
+<body>
+	{% include "header.html" %}
+	<div id="main" class="clearfix">
+		<div class="main-content">
+			<div id="content">{% block content%}{% endblock %}</div>
+			<!-- end content -->
+			{% include "sidebar.html"%}
+		</div>
+		<!-- end main-content -->
+	</div>
+	<!-- end #main -->
+	<div id="footer">
+		<div class="foot-wrap">
+			<div class="copyright">
+            主题由 Commy 设计，采用 HTML5 + CSS3 ©2012 设计达人. 保留所有权利。
+			</div>
+		</div>
+	</div>
+<!-- end #footer -->
+	<a href="#main" class="top" style="display: inline">Top</a>
+</body>
+</html>
