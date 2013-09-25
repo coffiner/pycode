@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+
+{% block title%}关于danpy5{% endblock%}
+{% block content%}
+{% load duoshuo_tags%}
+		<div class="post-wrap">
+			<div class="post">
+				<h2>关于danpy5</h2>
+				<p>一直彷徨的小鸟</p>
+                <h3></h3>
+				<h4>苦BI的大四学生，求实习!</h4>
+				<div>
+				</div>
+
+			</div>
+		</div>
+	{% if comments %}
+	<a name="comments">{% duoshuo_comments %}</a>
+	{% endif %}
+{% endblock%}

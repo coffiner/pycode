@@ -1,0 +1,28 @@
+<div id="sidebar" class="clearfix">
+<div id="left-col">
+	<nav class="nav">
+		<div class="widget">
+			<h3 class="widgettitle">分类</h3>
+			<ul>
+				{% for category in category_list%}
+				<li class="cat-item"><a href="{{ category.get_absolute_url }}">{{category.name}}</a></li>
+				{% endfor %}
+			
+			</ul>
+		</div>
+		<div class="widget">
+			<h3 class="widgettitle">link</h3>
+			<ul>
+				{% for link in link_list%}
+				<li class="cat-item"><a href="{{link.link}}">{{link.name}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+        <div class="widget">
+            <h3 class="widgettitle">最近访客</h3>
+            <ul class="ds-recent-visitors"></ul>
+        </div>
+	</nav>
+</div>
+</div>
+<!-- end sidebar -->

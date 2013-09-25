@@ -1,0 +1,8 @@
+<ul class="pager">
+	{%if contacts.has_previous %}
+  <li><a href="?page={{ contacts.previous_page_number }}">aaaa</a></li>
+  {%endif%}
+  {%if contacts.has_next%}
+  <li><a href="?page={{ contacts.next_page_number }}">bbbb</a></li>
+  {% endif%}
+</ul>
