@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block title%}about_group{%endblock%}
+
+{%block content%}
+	<div class="container-fluid">
+		<div class="row-fluid">
+		    <div class="span3 div-style">
+		      <h3>{{group.groupname}}</h3>
+		      
+		      <div>
+		      	<li><a href="/blog/{{group.master.id}}/">{{group.master.username}}</a></li>
+		      </div>
+		      {% if user in group.members.all%}
+		      <div style="padding:15px 0px 0px">
+		      	<a href="/add_member/" class="btn btn-success">add member</a>
+		      </div>
+		      {% else%}
+		      <div style="padding:15px 0px 0px">
+		      	<a href="/add_group/{{group.id}}/" class="btn btn-success">add group</a>
+		      </div>
+		      {% endif %}
+		      
+		    </div>
+		    <div class="span8 div-style">
+		      <div>
+		      	<p>{{group.description}}</p>
+		      	{% for user in group.members.all%}
+		      	<div>
+		      		<li>{{user.username}}</li>
+		      	</div>
+		      	{% endfor%}
+		      </div>
+		    </div>
+		</div>
+	</div>
+
+{%endblock%}

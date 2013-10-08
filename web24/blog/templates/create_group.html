@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block title%}group{%endblock%}
+
+{%block content%}
+	{% if user.username %}
+	<div class="div-style">
+		<h3>create group</h3>
+		<form action="" method="post" class="form-horizontal">
+			{% csrf_token %}
+			<div class="control-group">
+				<div class="controls">
+					<label class="radio inline">
+					<input type="radio" value="True" name="ispub" checked="checked">
+					public
+					</label>
+					<label class="radio inline">
+					<input type="radio" value="False" name="ispub">
+					private
+					</label>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<p>public group can add but private group must member invite</p>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="group">group name</label>
+				<div class="controls">
+				  <input type="text" id="group" placeholder="group name" name="groupname">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="group-d">group desc</label>
+				<div class="controls">
+					<textarea rows="3" id="group-d" name="groupdesc"></textarea>
+				  <!-- <input type="text" id="group-d" placeholder="group description"> -->
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn">Sign in</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	{% endif %}
+
+{%endblock%}

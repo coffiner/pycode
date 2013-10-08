@@ -1,0 +1,39 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,
+p,a,img,ul,li,ol,table,tr,td,form {
+	background: transparent;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-image: url('../img/bg.jpg');
+	background-repeat: repeat;
+}	
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.box-style{
+	max-width: 300px;
+	padding: 19px 29px 29px;
+	background-color: #fff;
+	margin: 150px auto;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	box-shadow: 0px 1px 2px rgba(0,0,0,.05);
+}
+
+.div-style{
+	border: 1px solid #e5e5e5;
+	background-color: #fff;
+	border-radius: 5px;
+	margin: 75px auto;
+	padding: 29px 29px 29px;
+	box-shadow: 0px 1px 2px rgba(0,0,0,.05);
+}

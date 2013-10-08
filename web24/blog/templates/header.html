@@ -1,0 +1,32 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<button type="button" class="btn btn-navbar" data-toggle="collapse"
+				data-target=".nav-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li class="active"><a href="/index/">main</a></li>
+					<li><a href="/group/">group</a></li>
+				</ul>
+				<ul class="nav pull-right">
+					{% if user.username%}
+					{% if ishave %}
+					<li><a href="" style="color:red;">mail</a></li>
+					{%else%}
+					<li><a href="">mail</a></li>
+					{% endif %}
+					<li><a href="/blog/{{user.id}}/">{{user.username}}</a></li>
+					<li><a href="/logout/">logout</a></li>	
+					{% else%}
+					<li><a href="/regist/">regist</a></li>
+					<li><a href="/login/">login</a></li>
+					{% endif%}			
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
